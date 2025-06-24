@@ -1,0 +1,211 @@
+/* Apple Music Background Styles */
+.apple-music-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  filter: blur(0px);
+}
+
+.apple-music-background.playing {
+  animation: backgroundPulse 4s ease-in-out infinite;
+}
+
+.apple-music-background.paused {
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+/* Apple Music 风格的律动粒子 */
+.music-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.music-particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: musicFloat 6s ease-in-out infinite;
+}
+
+.particle-1 {
+  width: 400px;
+  height: 400px;
+  top: -10%;
+  left: -10%;
+  animation-duration: 8s;
+}
+
+.particle-2 {
+  width: 300px;
+  height: 300px;
+  top: 60%;
+  right: -5%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.particle-3 {
+  width: 350px;
+  height: 350px;
+  bottom: -10%;
+  left: 40%;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+
+/* 音频可视化效果 */
+.audio-visualizer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.visualizer-bar {
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  animation: visualizerPulse 0.8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.visualizer-bar:nth-child(1) { animation-delay: 0s; }
+.visualizer-bar:nth-child(2) { animation-delay: 0.1s; }
+.visualizer-bar:nth-child(3) { animation-delay: 0.2s; }
+.visualizer-bar:nth-child(4) { animation-delay: 0.3s; }
+.visualizer-bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* 动画效果 */
+@keyframes backgroundPulse {
+  0%, 100% {
+    filter: blur(0px) brightness(1) saturate(1);
+    transform: scale(1);
+  }
+  25% {
+    filter: blur(0.5px) brightness(1.1) saturate(1.2);
+    transform: scale(1.01);
+  }
+  50% {
+    filter: blur(0px) brightness(1.2) saturate(1.3);
+    transform: scale(1.02);
+  }
+  75% {
+    filter: blur(0.5px) brightness(1.1) saturate(1.2);
+    transform: scale(1.01);
+  }
+}
+
+@keyframes musicFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1) rotate(90deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-20px, -80px) scale(0.9) rotate(180deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(-50px, -40px) scale(1.05) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes visualizerPulse {
+  0%, 100% {
+    height: 20px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 40px;
+    opacity: 1;
+  }
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .music-particle {
+    opacity: 0.5;
+  }
+  
+  .particle-1 {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .particle-2 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .particle-3 {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .audio-visualizer {
+    bottom: 10px;
+  }
+  
+  .visualizer-bar {
+    width: 3px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-particle {
+    opacity: 0.3;
+  }
+  
+  .particle-1 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .particle-2 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .particle-3 {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .visualizer-bar {
+    width: 2px;
+    height: 12px;
+  }
+}
+
+/* 高性能模式 */
+@media (prefers-reduced-motion: reduce) {
+  .apple-music-background,
+  .music-particle,
+  .visualizer-bar {
+    animation: none;
+  }
+  
+  .apple-music-background.playing {
+    filter: brightness(1.1);
+  }
+}

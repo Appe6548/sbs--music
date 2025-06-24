@@ -1,0 +1,142 @@
+# 🎵 Apple Music-like Player
+
+A beautiful music player web application with Apple Music-style lyrics display, built with React, TypeScript, and the Apple Music-like Lyrics (AMLL) component library.
+
+![Apple Music-like Player](https://img.shields.io/badge/React-19.1.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)
+![AMLL](https://img.shields.io/badge/AMLL-0.1.3-green)
+![Vite](https://img.shields.io/badge/Vite-6.3.5-purple)
+
+## ✨ Features
+
+- 🎶 **Audio Playback**: Support for various audio formats (MP3, AAC, OGG, etc.)
+- 📝 **Synchronized Lyrics**: Real-time lyrics display with Apple Music-style effects
+- 🌍 **Bilingual Support**: Display original and translated lyrics simultaneously
+- 🎨 **Beautiful UI**: Modern, responsive design inspired by Apple Music
+- 📱 **Mobile Friendly**: Optimized for both desktop and mobile devices
+- 🔄 **LRC Support**: Parse and display standard LRC format lyrics
+- ⚡ **High Performance**: Optimized with WebAssembly for smooth animations
+- 🌐 **Web-based**: No installation required, runs in any modern browser
+
+## 🚀 Quick Start
+
+### Development
+
+1. **Clone and install dependencies**
+   ```bash
+   git clone <your-repo-url>
+   cd apple-music-player
+   npm install
+   ```
+
+2. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in browser**
+   - Navigate to `http://localhost:5173`
+   - Upload your audio file and LRC lyrics file
+   - Enjoy the Apple Music-like experience!
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## 🎯 Usage
+
+1. **Upload Audio**: Click "Choose Audio File" to select your music file
+2. **Upload Original Lyrics**: Click "Choose Original Lyrics" to select an LRC format lyrics file
+3. **Upload Translation** (Optional): Click "Choose Translation Lyrics" to add translated lyrics
+4. **Play Music**: Use the play/pause button to control playback
+5. **Enjoy**: Watch the beautiful synchronized bilingual lyrics display
+
+### Supported Formats
+
+- **Audio**: MP3, AAC, OGG, WAV, M4A
+- **Lyrics**: LRC format with timestamps
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite 6
+- **Lyrics Engine**: Apple Music-like Lyrics (AMLL)
+- **Styling**: CSS3 with modern features
+- **WebAssembly**: For high-performance lyrics processing
+
+## 📦 Dependencies
+
+### Core Libraries
+- `@applemusic-like-lyrics/core`: Core lyrics rendering engine
+- `@applemusic-like-lyrics/react`: React bindings for AMLL
+- `@applemusic-like-lyrics/lyric`: Lyrics parsing utilities
+
+### Development Tools
+- `vite-plugin-wasm`: WebAssembly support
+- `vite-plugin-top-level-await`: Top-level await support
+
+## 🌐 Deployment
+
+This project is optimized for **Cloudflare Pages** deployment. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
+
+### Quick Deploy to Cloudflare Pages
+
+1. Build the project: `npm run build`
+2. Upload the `dist` folder to Cloudflare Pages
+3. Configure build settings:
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Node.js version: `18` or `20`
+
+## 🎨 Customization
+
+### Styling
+The player uses CSS custom properties for easy theming. Key variables:
+- Background gradients
+- Color schemes
+- Animation timings
+- Layout dimensions
+
+### AMLL Configuration
+Customize lyrics display in `src/components/LyricsDisplay.tsx`:
+- Animation effects
+- Alignment settings
+- Spring physics
+- Visual effects
+
+## 🔧 Browser Compatibility
+
+### Minimum Requirements
+- Chrome 91+
+- Firefox 100+
+- Safari 9.1+
+
+### Optimal Performance
+- Chrome 120+
+- Firefox 100+
+- Safari 15.4+
+
+## 📄 License
+
+This project is open source. The Apple Music-like Lyrics library is licensed under GPL-3.0.
+
+## 🙏 Acknowledgments
+
+- [Apple Music-like Lyrics](https://github.com/Steve-xmh/applemusic-like-lyrics) by Steve-xmh
+- [AMLL TTML Tool](https://github.com/Steve-xmh/amll-ttml-tool) for inspiration
+- Apple Music for the beautiful design inspiration
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Support
+
+If you encounter any issues or have questions, please check the browser console for error messages and ensure:
+- Your audio file format is supported
+- Your LRC file is properly formatted
+- Your browser supports WebAssembly
+- CORS policies allow file access

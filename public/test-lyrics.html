@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lyrics Test</title>
+</head>
+<body>
+    <h1>Lyrics Loading Test</h1>
+    <div id="output"></div>
+    
+    <script>
+        async function testLyrics() {
+            const output = document.getElementById('output');
+            
+            try {
+                // Test English lyrics
+                console.log('Testing English lyrics...');
+                const enResponse = await fetch('/lyrics_en.lrc');
+                const enText = await enResponse.text();
+                console.log('English lyrics loaded:', enText.length, 'characters');
+                
+                // Test Chinese lyrics
+                console.log('Testing Chinese lyrics...');
+                const zhResponse = await fetch('/lyrics_zh.lrc');
+                const zhText = await zhResponse.text();
+                console.log('Chinese lyrics loaded:', zhText.length, 'characters');
+                
+                output.innerHTML = `
+                    <p>✅ English lyrics: ${enText.length} characters</p>
+                    <p>✅ Chinese lyrics: ${zhText.length} characters</p>
+                    <pre>${enText.substring(0, 200)}...</pre>
+                `;
+                
+            } catch (error) {
+                console.error('Error:', error);
+                output.innerHTML = `<p>❌ Error: ${error.message}</p>`;
+            }
+        }
+        
+        testLyrics();
+    </script>
+</body>
+</html>
