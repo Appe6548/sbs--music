@@ -18,13 +18,7 @@ function App() {
   const [showLyrics, setShowLyrics] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const handleTimeUpdate = useCallback((time: number) => {
-    setCurrentTime(time);
-  }, []);
 
-  const handleDurationChange = useCallback((dur: number) => {
-    setDuration(dur);
-  }, []);
 
   // Load default track on app start
   useEffect(() => {
@@ -51,13 +45,7 @@ function App() {
     loadDefaultTrack();
   }, []);
 
-  const handlePlay = useCallback(() => {
-    setIsPlaying(true);
-  }, []);
 
-  const handlePause = useCallback(() => {
-    setIsPlaying(false);
-  }, []);
 
   // 音频控制函数
   const handlePlayPause = useCallback(() => {
