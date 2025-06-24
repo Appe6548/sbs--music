@@ -1008,7 +1008,7 @@
     height: 100%;
     padding: 0 1.5rem;
     box-sizing: border-box;
-    padding-top: 20vh; /* 为顶部预留20%的空间 */
+    padding-top: 8vh; /* 为顶部预留8%的空间，减少下移 */
     position: relative;
   }
 
@@ -1504,7 +1504,7 @@
 @media (max-width: 480px) {
   .player-section {
     padding: 0 1rem;
-    padding-top: 15vh; /* 小屏幕为顶部预留15%的空间 */
+    padding-top: 6vh; /* 小屏幕为顶部预留6%的空间，进一步减少下移 */
   }
 
   .cover-image,
